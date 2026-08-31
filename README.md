@@ -1,19 +1,9 @@
-# Maestro Paints Website
+# Maestro Paints Website — Editable Build v2
 
-This is the editable static website build.
+The navigation and footer are shared across every page and live in `main.js`. Change them once there and every page updates automatically.
 
-## Main editable files
-- `index.html` — homepage wording and section content
-- `products.html` — products page
-- `colours.html` — colours page
-- `our-story.html` — story page
-- `stockists.html` — stockist page
-- `contact.html` — contact page
-- `style.css` — spacing, typography, sizing and responsive layout
-- `main.js` — mobile menu
-
-## Deployment
-The repository is connected to Cloudflare. Committing changes to the production branch triggers a new deployment.
-
-## Design reference
-`approved-reference.png` is the original approved design reference. It is not used as the live homepage.
+Changes in v2:
+- Removed Find a Stockist from navigation.
+- Removed Find a Stockist from the homepage.
+- Standardised navigation and footer across every page.
+- Cleaned CTA hover/focus styling.
