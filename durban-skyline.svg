@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="t d">
+  <title id="t">Durban skyline illustration</title>
+  <desc id="d">A monochrome coastal illustration inspired by Durban, South Africa, featuring the beachfront skyline, ocean and a stadium arch.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#050505"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#181818"/><stop offset="1" stop-color="#080808"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".9"/><stop offset=".18" stop-color="#000" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="560" fill="url(#sky)"/>
+  <circle cx="1005" cy="105" r="38" fill="#d7d7d7" opacity=".16"/>
+  <g fill="#111" stroke="#4d4d4d" stroke-width="2">
+    <rect x="95" y="190" width="90" height="180"/><rect x="205" y="152" width="105" height="218"/><rect x="330" y="210" width="65" height="160"/>
+    <rect x="418" y="130" width="88" height="240"/><rect x="525" y="182" width="70" height="188"/><rect x="612" y="224" width="82" height="146"/>
+    <rect x="705" y="162" width="93" height="208"/><rect x="820" y="205" width="64" height="165"/><rect x="905" y="175" width="74" height="195"/>
+    <rect x="1002" y="225" width="95" height="145"/>
+  </g>
+  <g stroke="#777" stroke-width="3" fill="none" opacity=".5">
+    <path d="M204 370V165M418 370V145M704 370V177"/>
+    <path d="M150 250h20M150 280h20M150 310h20M242 220h28M242 250h28M242 280h28M450 190h25M450 225h25M450 260h25M738 210h28M738 245h28M738 280h28"/>
+  </g>
+  <!-- Moses Mabhida inspired arch -->
+  <path d="M520 365 C610 140 760 135 850 365" fill="none" stroke="#d9d9d9" stroke-width="14" opacity=".58"/>
+  <path d="M540 365 C625 175 745 175 830 365" fill="none" stroke="#555" stroke-width="5" opacity=".8"/>
+  <rect y="365" width="1200" height="195" fill="url(#sea)"/>
+  <path d="M0 405 C120 380 215 430 335 405 S560 380 680 405 S925 430 1200 395" fill="none" stroke="#8d8d8d" stroke-width="3" opacity=".35"/>
+  <path d="M0 455 C150 425 260 485 430 450 S725 425 895 458 S1080 470 1200 445" fill="none" stroke="#bdbdbd" stroke-width="2" opacity=".25"/>
+  <path d="M0 500 C150 470 290 525 475 500 S840 478 1200 512" fill="none" stroke="#6f6f6f" stroke-width="2" opacity=".28"/>
+  <rect width="360" height="560" fill="url(#fade)"/>
+</svg>
