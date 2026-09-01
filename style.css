@@ -63,12 +63,15 @@ button,input,textarea{font:inherit}
   transition:.18s ease;
 }
 .btn::after{
-  content:"";
-  width:24px;
-  height:14px;
-  background:url("assets/icons/arrow-right-bold.svg") center/contain no-repeat;
-  filter:brightness(0) invert(1);
+  content:"➜";
+  width:auto;
+  height:auto;
+  background:none;
+  filter:none;
   flex:0 0 auto;
+  font-size:20px;
+  line-height:1;
+  font-weight:900;
 }
 .btn-red{background:var(--red);border-color:var(--red)}
 .btn-red:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-1px)}
@@ -78,7 +81,7 @@ button,input,textarea{font:inherit}
 .btn-light-outline{border-color:var(--red);color:#111}
 .btn-light-outline::after{filter:none}
 .btn-light-outline:hover{background:var(--red);color:#fff}
-.btn-light-outline:hover::after{filter:brightness(0) invert(1)}
+.btn-light-outline:hover::after{filter:none}
 .text-link{
   display:inline-flex;align-items:center;gap:9px;
   color:var(--red);font-weight:900;font-size:13px;text-transform:uppercase;
@@ -296,7 +299,7 @@ button,input,textarea{font:inherit}
 .product-actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
 .whatsapp-btn{background:#050505}
 .whatsapp-btn::before{
-  content:"";width:24px;height:24px;background:url("assets/icons/whatsapp.svg") center/contain no-repeat
+  content:"";width:24px;height:24px;background:url("whatsapp.svg") center/contain no-repeat
 }
 .product-tabs{
   margin-top:38px;border-top:1px solid #cfcfcf;

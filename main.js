@@ -9,7 +9,7 @@ function header(active=""){
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" aria-label="Maestro Paints home">
-        <img src="assets/images/maestro-logo.jpg" class="logo" alt="Maestro Paints">
+        <img src="maestro-logo.jpg" class="logo" alt="Maestro Paints">
       </a>
       <button class="menu-toggle" aria-label="Open menu">☰</button>
       <nav class="main-nav">
@@ -30,7 +30,7 @@ function footer(){
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/images/maestro-logo.jpg" class="footer-logo" alt="Maestro Paints">
+          <img src="maestro-logo.jpg" class="footer-logo" alt="Maestro Paints">
           <p>Premium paints and coatings for every surface, built to last.</p>
         </div>
         <div class="footer-col">
