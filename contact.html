@@ -1,9 +1,30 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact | Maestro Paints</title><meta name="description" content="Contact Maestro Paints in Durban for product and project enquiries."><link rel="icon" href="favicon.png"><link rel="stylesheet" href="style.css"></head>
-<body><div id="site-header"></div><main class="page contact-page">
-  <p class="eyebrow">GET IN TOUCH</p><h1>Contact</h1><p class="lead">Tell us about your project and our team will help you find the right Maestro product.</p>
-  <div class="contact-grid">
-    <div class="contact-details"><h2>Maestro Paints</h2><p>9 Maplefield Place<br>Umgeni Business Park<br>Durban</p><p><strong>Phone</strong><br><a href="tel:+27849091786">084 909 1786</a></p><p><strong>Email</strong><br><a href="mailto:info@maestropaints.co.za">info@maestropaints.co.za</a></p><a class="btn btn-whatsapp" href="https://wa.me/27849091786?text=Hi%20Maestro%20Paints%2C%20I%27d%20like%20to%20enquire%20about%20your%20products." target="_blank" rel="noopener">WHATSAPP US <span class="cta-arrow" aria-hidden="true">➜</span></a></div>
-    <form class="contact-form" action="mailto:info@maestropaints.co.za" method="post" enctype="text/plain"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label><label>Phone<input name="phone"></label><label>Product / Project<input name="product"></label><label>Message<textarea name="message" rows="6" required></textarea></label><button class="btn btn-red" type="submit">ENQUIRE NOW <span class="cta-arrow" aria-hidden="true">➜</span></button></form>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Maestro Paints</title><link rel="stylesheet" href="style.css"></head>
+<body data-page="contact"><div id="site-header"></div>
+<main class="contact-page">
+<div class="container contact-layout">
+  <div>
+    <p class="eyebrow">Contact Us</p>
+    <h1 class="display contact-title">We're Here To Help.</h1>
+    <p class="contact-intro">Get in touch with our team for product advice, quotations or any other enquiries.</p>
+    <div class="contact-cards">
+      <a class="contact-card" href="tel:+27849091786"><img src="assets/icons/phone.svg"><div><strong>Call Us</strong><span>084 909 1786</span></div></a>
+      <a class="contact-card whatsapp-card whatsapp-link" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.svg"><div><strong>WhatsApp</strong><span>084 909 1786</span></div></a>
+      <a class="contact-card" href="mailto:info@maestropaints.co.za"><img src="assets/icons/email.svg"><div><strong>Email Us</strong><span>info@maestropaints.co.za</span></div></a>
+      <div class="contact-card"><img src="assets/icons/location.svg"><div><strong>Visit Us</strong><span>9 Maplefield Place,<br>Umgeni Business Park,<br>Durban</span></div></div>
+    </div>
   </div>
-</main><div id="site-footer"></div><script src="main.js"></script></body></html>
+  <form id="contactForm" class="form-card">
+    <h3>Send Us A Message</h3>
+    <input required name="name" placeholder="Your Name">
+    <input required name="email" type="email" placeholder="Email Address">
+    <input name="phone" placeholder="Phone Number">
+    <textarea required name="message" placeholder="How can we help?"></textarea>
+    <button class="btn btn-red" type="submit">Send Message</button>
+  </form>
+</div>
+</main>
+<div id="site-footer"></div>
+<a class="whatsapp-float whatsapp-link" target="_blank" rel="noopener"><img src="assets/icons/whatsapp.svg"><span>Chat on WhatsApp</span></a>
+<script src="main.js"></script></body></html>
