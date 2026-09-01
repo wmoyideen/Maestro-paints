@@ -1,0 +1,18 @@
+MAESTRO PAINTS — COMPLETE CLOUDFLARE BUILD
+
+This ZIP contains everything required for the current static website.
+
+HOW TO DEPLOY:
+1. Extract this ZIP.
+2. Open the Maestro Paints GitHub repository.
+3. Remove/replace the old website files.
+4. Upload ALL files from this extracted folder directly to the repository ROOT.
+5. Commit the changes.
+6. Cloudflare will detect the GitHub commit and deploy automatically.
+7. Wait for Cloudflare deployment status: Success.
+8. Open the live site and press Ctrl + F5.
+
+IMPORTANT:
+- Do NOT upload the ZIP itself.
+- Do NOT put these files inside another folder.
+- index.html, style.css, main.js and all JPG/SVG files must sit together at repository root.
