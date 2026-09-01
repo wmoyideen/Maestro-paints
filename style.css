@@ -473,3 +473,307 @@ button,input,textarea{font:inherit}
 .story-image img{
   image-rendering:auto;
 }
+
+
+/* =========================================================
+   MAESTRO MOTION SYSTEM
+   Premium, restrained motion. Automatically disabled for
+   users who prefer reduced motion.
+   ========================================================= */
+
+body{
+  opacity:1;
+  transition:opacity .18s ease;
+}
+body.page-leaving{
+  opacity:0;
+}
+
+/* Global interactive polish */
+.btn,
+.text-link,
+.main-nav a,
+.product-frame,
+.product-frame img,
+.contact-card,
+.help-icon,
+.whatsapp-float{
+  will-change:transform;
+}
+.btn{
+  transition:transform .22s cubic-bezier(.2,.75,.25,1),background-color .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+}
+.btn-red:hover{
+  box-shadow:0 10px 28px rgba(239,13,25,.22);
+}
+.btn::after,
+.text-link::after{
+  display:inline-block;
+  transition:transform .22s cubic-bezier(.2,.75,.25,1);
+}
+.btn:hover::after,
+.text-link:hover::after{
+  transform:translateX(5px);
+}
+.main-nav a{
+  position:relative;
+}
+.main-nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-8px;
+  height:2px;
+  background:var(--red);
+  transition:right .24s ease;
+}
+.main-nav a:hover::after,
+.main-nav a.active::after{
+  right:0;
+}
+
+/* Hero entrance */
+.hero-line{
+  display:block;
+}
+.hero-line-master{
+  color:#fff !important;
+}
+.hero-line-colour{
+  color:var(--red) !important;
+}
+
+body.motion-enabled .hero-line-master,
+body.motion-enabled .hero-line-colour,
+body.motion-enabled .hero-copy p,
+body.motion-enabled .hero-actions{
+  opacity:0;
+  transform:translateY(24px);
+}
+body.motion-enabled.motion-loaded .hero-line-master{
+  animation:maestroHeroUp .68s cubic-bezier(.16,1,.3,1) .08s forwards;
+}
+body.motion-enabled.motion-loaded .hero-line-colour{
+  animation:maestroHeroUp .68s cubic-bezier(.16,1,.3,1) .20s forwards;
+}
+body.motion-enabled .hero-brush{
+  transform:skewX(-18deg) scaleX(0);
+  transform-origin:left center;
+}
+body.motion-enabled.motion-loaded .hero-brush{
+  animation:maestroBrush .72s cubic-bezier(.16,1,.3,1) .34s forwards;
+}
+body.motion-enabled.motion-loaded .hero-copy p{
+  animation:maestroHeroUp .62s cubic-bezier(.16,1,.3,1) .42s forwards;
+}
+body.motion-enabled.motion-loaded .hero-actions{
+  animation:maestroHeroUp .62s cubic-bezier(.16,1,.3,1) .52s forwards;
+}
+body.motion-enabled .hero-art{
+  opacity:0;
+  transform:translateX(34px);
+}
+body.motion-enabled.motion-loaded .hero-art{
+  animation:maestroHeroArt .9s cubic-bezier(.16,1,.3,1) .08s forwards;
+}
+body.motion-enabled .hero-art img{
+  transform:scale(1.055);
+}
+body.motion-enabled.motion-loaded .hero-art img{
+  animation:maestroHeroImage 1.5s cubic-bezier(.16,1,.3,1) .10s forwards;
+}
+
+/* A subtle light sweep through the hero visual */
+.hero-art::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:-34%;
+  width:28%;
+  z-index:3;
+  opacity:0;
+  pointer-events:none;
+  transform:skewX(-14deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.075),transparent);
+}
+body.motion-enabled.motion-loaded .hero-art::after{
+  animation:maestroSweep 1.25s ease .58s both;
+}
+
+/* Scroll reveal system */
+body.motion-enabled .reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:
+    opacity .62s cubic-bezier(.16,1,.3,1),
+    transform .62s cubic-bezier(.16,1,.3,1);
+  transition-delay:var(--reveal-delay,0ms);
+}
+body.motion-enabled .reveal.reveal-left{
+  transform:translateX(-30px);
+}
+body.motion-enabled .reveal.reveal-right{
+  transform:translateX(30px);
+}
+body.motion-enabled .reveal.is-visible{
+  opacity:1;
+  transform:translate(0,0);
+}
+
+/* USP cards */
+.usp{
+  transition:background-color .24s ease,transform .24s cubic-bezier(.2,.75,.25,1);
+}
+.usp:hover{
+  background:rgba(255,255,255,.025);
+  transform:translateY(-4px);
+}
+.usp img{
+  transition:transform .28s cubic-bezier(.16,1,.3,1);
+}
+.usp:hover img{
+  transform:translateY(-3px) scale(1.07);
+}
+
+/* Product cards */
+.product-card{
+  transition:transform .26s cubic-bezier(.16,1,.3,1);
+}
+.product-card:hover{
+  transform:translateY(-6px);
+}
+.product-frame{
+  overflow:hidden;
+  transition:box-shadow .28s ease,transform .28s cubic-bezier(.16,1,.3,1);
+}
+.product-card:hover .product-frame{
+  box-shadow:0 18px 36px rgba(0,0,0,.10);
+}
+.product-frame img{
+  transition:transform .42s cubic-bezier(.16,1,.3,1);
+}
+.product-card:hover .product-frame img{
+  transform:scale(1.045);
+}
+
+/* Enquiry strip */
+.help-strip{
+  background-size:140% 100%,100% 100%;
+  background-position:100% 50%,0 0;
+  transition:background-position 1.2s ease;
+}
+.help-strip.is-visible{
+  background-position:74% 50%,0 0;
+}
+.help-icon{
+  transition:transform .32s cubic-bezier(.16,1,.3,1),box-shadow .3s ease;
+}
+.help-strip:hover .help-icon{
+  transform:scale(1.06);
+  box-shadow:0 0 0 7px rgba(239,13,25,.08);
+}
+
+/* Story cinematic image / light parallax */
+.story-image img{
+  transform:translate3d(0,var(--story-shift,0px),0) scale(1.055);
+  transition:filter .4s ease;
+  will-change:transform;
+}
+.story-home:hover .story-image img{
+  filter:grayscale(1) contrast(1.1) brightness(.84);
+}
+
+/* WhatsApp: one entrance only, no distracting bounce */
+body.motion-enabled .whatsapp-float{
+  opacity:0;
+  transform:translateY(16px) scale(.96);
+}
+body.motion-enabled.motion-loaded .whatsapp-float{
+  animation:maestroWhatsApp .52s cubic-bezier(.16,1,.3,1) 1.05s forwards;
+}
+.whatsapp-float{
+  transition:transform .24s cubic-bezier(.16,1,.3,1),box-shadow .24s ease,background-color .2s ease;
+}
+.whatsapp-float:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(0,0,0,.38);
+}
+
+/* Contact/product-page polish */
+.contact-card:hover{
+  transform:translateY(-3px);
+  border-color:#666;
+}
+.gallery-thumbs button,
+.tab-button{
+  transition:transform .18s ease,background-color .18s ease,border-color .18s ease;
+}
+.gallery-thumbs button:hover{
+  transform:translateY(-2px);
+}
+.tab-button:hover{
+  background:#fff;
+}
+
+/* Keyframes */
+@keyframes maestroHeroUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes maestroBrush{
+  from{transform:skewX(-18deg) scaleX(0)}
+  to{transform:skewX(-18deg) scaleX(1)}
+}
+@keyframes maestroHeroArt{
+  from{opacity:0;transform:translateX(34px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes maestroHeroImage{
+  from{transform:scale(1.055)}
+  to{transform:scale(1)}
+}
+@keyframes maestroSweep{
+  0%{left:-34%;opacity:0}
+  18%{opacity:1}
+  100%{left:112%;opacity:0}
+}
+@keyframes maestroWhatsApp{
+  from{opacity:0;transform:translateY(16px) scale(.96)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,
+  *::before,
+  *::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  body,
+  body.page-leaving,
+  body.motion-enabled .reveal,
+  body.motion-enabled .hero-art,
+  body.motion-enabled .hero-line-master,
+  body.motion-enabled .hero-line-colour,
+  body.motion-enabled .hero-copy p,
+  body.motion-enabled .hero-actions,
+  body.motion-enabled .whatsapp-float{
+    opacity:1 !important;
+    transform:none !important;
+  }
+  body.motion-enabled .hero-brush{
+    transform:skewX(-18deg) scaleX(1) !important;
+  }
+  .story-image img{
+    transform:scale(1.055) !important;
+  }
+}

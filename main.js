@@ -110,3 +110,100 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+/* ===== MAESTRO MOTION ===== */
+(function initMaestroMotion(){
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduceMotion) return;
+
+  document.body.classList.add("motion-enabled");
+
+  // Start hero animation only after the browser has painted the page once.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => document.body.classList.add("motion-loaded"));
+  });
+
+  // Apply reveal classes without requiring repetitive markup.
+  const revealGroups = [
+    { selector: ".usp", direction: "", stagger: 70 },
+    { selector: ".section-heading-row > *", direction: "", stagger: 90 },
+    { selector: ".product-card", direction: "", stagger: 80 },
+    { selector: ".help-copy", direction: "reveal-left", stagger: 0 },
+    { selector: ".help-inner > .btn", direction: "reveal-right", stagger: 80 },
+    { selector: ".story-copy > *", direction: "reveal-left", stagger: 65 },
+    { selector: ".story-image", direction: "reveal-right", stagger: 120 },
+    { selector: ".catalog .product-card", direction: "", stagger: 70 },
+    { selector: ".contact-layout > *", direction: "", stagger: 100 },
+    { selector: ".contact-card", direction: "", stagger: 60 },
+    { selector: ".product-layout > *", direction: "", stagger: 100 },
+    { selector: ".product-tabs", direction: "", stagger: 0 },
+    { selector: ".info-section .container > *", direction: "", stagger: 70 }
+  ];
+
+  const revealItems = new Set();
+  revealGroups.forEach(group => {
+    $$(group.selector).forEach((el, index) => {
+      if(el.closest(".hero")) return;
+      el.classList.add("reveal");
+      if(group.direction) el.classList.add(group.direction);
+      el.style.setProperty("--reveal-delay", `${Math.min(index * group.stagger, 360)}ms`);
+      revealItems.add(el);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        if(entry.target.classList.contains("help-strip")){
+          entry.target.classList.add("is-visible");
+        }
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold:.13, rootMargin:"0px 0px -5% 0px" });
+
+  revealItems.forEach(el => observer.observe(el));
+
+  const helpStrip = $(".help-strip");
+  if(helpStrip) observer.observe(helpStrip);
+
+  // Subtle Durban image parallax. Kept deliberately small to prevent crop issues.
+  const story = $(".story-home");
+  const storyImage = story ? $(".story-image", story) : null;
+  let ticking = false;
+
+  function updateStoryParallax(){
+    ticking = false;
+    if(!story || !storyImage) return;
+    const rect = story.getBoundingClientRect();
+    const viewport = window.innerHeight || document.documentElement.clientHeight;
+    if(rect.bottom < 0 || rect.top > viewport) return;
+    const progress = (viewport - rect.top) / (viewport + rect.height);
+    const shift = Math.max(-10, Math.min(10, (progress - .5) * 20));
+    storyImage.style.setProperty("--story-shift", `${shift.toFixed(2)}px`);
+  }
+
+  window.addEventListener("scroll", () => {
+    if(!ticking){
+      ticking = true;
+      requestAnimationFrame(updateStoryParallax);
+    }
+  }, { passive:true });
+  updateStoryParallax();
+
+  // Fast, subtle page fade for internal HTML navigation.
+  document.addEventListener("click", e => {
+    const link = e.target.closest("a[href]");
+    if(!link) return;
+    if(link.target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const href = link.getAttribute("href");
+    if(!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("http")) return;
+    if(!href.includes(".html")) return;
+
+    e.preventDefault();
+    document.body.classList.add("page-leaving");
+    window.setTimeout(() => { window.location.href = href; }, 165);
+  });
+})();

@@ -1,18 +1,27 @@
-MAESTRO PAINTS — COMPLETE CLOUDFLARE BUILD
+MAESTRO PAINTS — MOTION DESIGN BUILD
 
-This ZIP contains everything required for the current static website.
+This is the complete static Cloudflare build with the approved custom design plus premium motion.
 
-HOW TO DEPLOY:
+Included motion:
+- Staggered hero headline entrance
+- Animated red paint underline
+- Hero image reveal
+- Subtle hero light sweep
+- Scroll reveal for USP, product, enquiry, story, contact and inner-page content
+- Product hover lift / packshot scale
+- CTA arrow movement
+- Navigation underline
+- Subtle Durban story parallax
+- Clean WhatsApp entrance and hover
+- Quick internal page fade transitions
+- Reduced-motion accessibility support
+
+UPLOAD:
 1. Extract this ZIP.
-2. Open the Maestro Paints GitHub repository.
-3. Remove/replace the old website files.
-4. Upload ALL files from this extracted folder directly to the repository ROOT.
-5. Commit the changes.
-6. Cloudflare will detect the GitHub commit and deploy automatically.
-7. Wait for Cloudflare deployment status: Success.
-8. Open the live site and press Ctrl + F5.
+2. Replace ALL current GitHub repo files with ALL files in this folder.
+3. Keep every file at repository root.
+4. Commit & Push.
+5. Cloudflare should deploy automatically.
+6. Hard refresh the live site with Ctrl + F5.
 
-IMPORTANT:
-- Do NOT upload the ZIP itself.
-- Do NOT put these files inside another folder.
-- index.html, style.css, main.js and all JPG/SVG files must sit together at repository root.
+Do not upload the ZIP itself.
